@@ -2,12 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Keypad from './components/molecules/keypad/Keypad.js';
+import StackulatorControl from "./components/organisms/stackulatorControl/StackulatorControl.js";
 
 function App() {
   return (
     <div className="App">
-      <Keypad />
+      <StackulatorControl />
     </div>
   );
 }
