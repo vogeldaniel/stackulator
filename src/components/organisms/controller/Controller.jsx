@@ -2,13 +2,17 @@ import React from 'react';
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 
 import Keypad from '../../molecules/keypad/Keypad';
-import Display from '../../molecules/display/Display';
+import InputDisplay from '../../molecules/inputDisplay/InputDisplay';
+import StackDisplay from '../../molecules/stackDisplay/StackDisplay';
+
+import Stack from '../../../utils/Stack/Stack';
 
 class Controller extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       inputNum: 0,
+      stack: new Stack(),
     };
   }
 
@@ -36,10 +40,11 @@ class Controller extends React.Component {
   };
 
   render = () => {
-    const { inputNum } = this.state;
+    const { inputNum, stack } = this.state;
     return (
       <div>
-        <Display num={inputNum} />
+        <StackDisplay memory={stack.memory} />
+        <InputDisplay num={inputNum} />
         <Keypad clickHandler={this.input} />
         <KeyboardEventHandler
           handleKeys={['numeric']}

@@ -1,6 +1,6 @@
 class Stack {
   constructor() {
-    this.memory = [];
+    this.memory = [1, 2, 3];
   }
 
   isEmpty = () => this.memory.length === 0;
