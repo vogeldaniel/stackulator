@@ -2,12 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import StackulatorControl from "./components/organisms/stackulatorControl/StackulatorControl.js";
+import Controller from "./components/organisms/controller/Controller.js";
 
 function App() {
   return (
     <div className="App">
-      <StackulatorControl />
+      <Controller />
     </div>
   );
 }
