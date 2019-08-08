@@ -36,6 +36,10 @@
     ]
   },
   "devDependencies": {
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-jest": "^22.15.0",
+    "install-peerdeps": "^1.10.2",
     "react-test-renderer": "^16.8.6"
   }
 }
