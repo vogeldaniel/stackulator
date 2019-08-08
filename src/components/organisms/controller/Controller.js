@@ -5,7 +5,7 @@ import KeyboardEventHandler from "react-keyboard-event-handler";
 import Keypad from "../../molecules/keypad/Keypad.js";
 import Display from "../../molecules/display/Display.js";
 
-class StackulatorControl extends React.Component {
+class Controller extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,30 +13,37 @@ class StackulatorControl extends React.Component {
     };
   }
 
-  inputNum = num => {
-    this.setState({
-      inputNum: this.state.inputNum * 10 + parseInt(num)
-    });
+  input = input => {
+    const asNum = parseInt(input);
+
+    if (isNaN(asNum)) {
+      switch (input) {
+        case "C":
+          this.setState({ inputNum: 0 });
+          break;
+        case "+/-":
+          this.setState({ inputNum: this.state.inputNum * (-1) })
+          break;
+      }
+    } else {
+      this.setState({
+        inputNum: this.state.inputNum * 10 + parseInt(input)
+      });
+    }
   };
 
   render = () => {
     return (
       <div>
         <Display num={this.state.inputNum} />
-        <Keypad clickHandler={this.clickHandler} />
+        <Keypad clickHandler={this.input} />
         <KeyboardEventHandler
           handleKeys={["numeric"]}
-          onKeyEvent={(key, e) => this.inputNum(key)}
+          onKeyEvent={(key, e) => this.input(key)}
         />
       </div>
     );
   };
-
-  clickHandler = buttonName => {
-    this.setState({
-      inputNum: this.state.inputNum * 10 + parseInt(buttonName)
-    });
-  };
 }
 
-export default StackulatorControl;
+export default Controller;

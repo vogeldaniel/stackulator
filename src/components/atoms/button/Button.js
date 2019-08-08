@@ -17,7 +17,7 @@ const Button = props => {
 
   return (
     <ButtonBox>
-      <BootstrapButton buttonName={props.buttonName} onClick={handleClick} size="lg">
+      <BootstrapButton buttonName={props.buttonName} onClick={handleClick} block>
         {props.buttonName}
       </BootstrapButton>
     </ButtonBox>

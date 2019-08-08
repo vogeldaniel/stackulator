@@ -35,7 +35,7 @@ class Keypad extends React.Component {
   };
 
   bottomRow = () => {
-    return <Row>{[0].map(char => this.buttonCol(char))}</Row>;
+    return <Row>{["C", 0, "+/-"].map(char => this.buttonCol(char, this.props.clickHandler))}</Row>;
   };
 
   render = () => {
