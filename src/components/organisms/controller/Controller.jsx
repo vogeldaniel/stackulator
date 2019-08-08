@@ -4,6 +4,7 @@ import KeyboardEventHandler from 'react-keyboard-event-handler';
 import Keypad from '../../molecules/keypad/Keypad';
 import InputDisplay from '../../molecules/inputDisplay/InputDisplay';
 import StackDisplay from '../../molecules/stackDisplay/StackDisplay';
+import StackOperations from '../../molecules/stackOperations/StackOperations';
 
 import Stack from '../../../utils/Stack/Stack';
 
@@ -19,7 +20,7 @@ class Controller extends React.Component {
   input = input => {
     const asNum = parseInt(input);
 
-    const { inputNum } = this.state;
+    const { inputNum, stack } = this.state;
 
     if (isNaN(asNum)) {
       switch (input) {
@@ -28,6 +29,20 @@ class Controller extends React.Component {
           break;
         case '+/-':
           this.setState({ inputNum: inputNum * -1 });
+          break;
+        case 'push':
+          stack.push(inputNum);
+          this.setState({ inputNum: 0 });
+          break;
+        case 'pop':
+          try {
+            this.setState({ inputNum: stack.pop() });
+          } catch (e) {
+            window.alert(e);
+          }
+          break;
+        case 'isEmpty':
+          window.alert(stack.isEmpty());
           break;
         default:
           break;
@@ -50,6 +65,7 @@ class Controller extends React.Component {
           handleKeys={['numeric']}
           onKeyEvent={key => this.input(key)}
         />
+        <StackOperations clickHandler={this.input} />
       </div>
     );
   };
