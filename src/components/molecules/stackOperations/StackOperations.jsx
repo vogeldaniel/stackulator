@@ -2,9 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import {
-  ButtonGroup, OverlayTrigger, Popover, Container, Row, Col,
+  OverlayTrigger, Popover, Container, Row, Col,
 } from 'react-bootstrap';
-import styled from 'styled-components';
 import Button from '../../atoms/button/Button';
 
 const stackOperands = [
@@ -63,15 +62,15 @@ const createButton = (operandInfo, clickHandler, props) => {
     <Col>
       <OverlayTrigger
         key={operandInfo.name}
-        placement="bottom"
-        trigger="hover"
-        delay={{ show: 250, hide: 400 }}
+        trigger={['hover', 'active']}
+        delay={{ show: 600, hide: 400 }}
         overlay={tooltip}
       >
         <span>
           <Button
             buttonName={operandInfo.name}
             onClick={clickHandler}
+            variant="warning"
           />
         </span>
       </OverlayTrigger>
@@ -84,12 +83,8 @@ const StackOperations = props => {
 
   return (
     <Container>
-      <Row>
-        {stackOperands.map(operation => createButton(operation, clickHandler, props))}
-      </Row>
-      <Row>
-        {mathOperands.map(operation => createButton(operation, clickHandler, props))}
-      </Row>
+      <Row>{stackOperands.map(operation => createButton(operation, clickHandler, props))}</Row>
+      <Row>{mathOperands.map(operation => createButton(operation, clickHandler, props))}</Row>
     </Container>
   );
 };

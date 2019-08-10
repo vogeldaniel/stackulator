@@ -10,7 +10,7 @@ const ButtonBox = styled.div`
 `;
 
 const Button = props => {
-  const { buttonName } = props;
+  const { buttonName, variant } = props;
 
   const handleClick = () => {
     props.onClick(props.buttonName);
@@ -22,6 +22,7 @@ const Button = props => {
         buttonName={buttonName}
         onClick={handleClick}
         block
+        variant={variant}
       >
         {buttonName}
       </BootstrapButton>

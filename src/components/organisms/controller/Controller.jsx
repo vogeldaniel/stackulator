@@ -1,6 +1,9 @@
+// TODO: This God-Class is too big!
+
 import React from 'react';
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 
+import styled from 'styled-components';
 import Keypad from '../../molecules/keypad/Keypad';
 import InputDisplay from '../../molecules/inputDisplay/InputDisplay';
 import StackDisplay from '../../molecules/stackDisplay/StackDisplay';
@@ -131,16 +134,28 @@ class Controller extends React.Component {
     return (
       <div>
         <StackDisplay memory={stack.memory} />
-        <InputDisplay num={inputNum} />
-        <Keypad clickHandler={this.input} />
-        <KeyboardEventHandler
-          handleKeys={['numeric']}
-          onKeyEvent={key => this.input(key)}
-        />
-        <StackOperations clickHandler={this.input} />
+        <div>
+          <InputArea>
+            <InputDisplay num={inputNum} />
+            <Keypad clickHandler={this.input} />
+            <KeyboardEventHandler
+              handleKeys={['numeric']}
+              onKeyEvent={key => this.input(key)}
+            />
+            <StackOperations clickHandler={this.input} />
+          </InputArea>
+        </div>
       </div>
     );
   };
 }
+
+const InputArea = styled.div`
+  background-color: #f8f9fa;
+  position: fixed;
+  bottom: 0;
+  align-items: center;
+  width: 100vw;
+`;
 
 export default Controller;

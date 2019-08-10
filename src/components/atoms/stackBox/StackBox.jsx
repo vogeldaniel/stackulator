@@ -6,7 +6,14 @@ import { Card } from 'react-bootstrap';
 const StackBox = props => {
   const { value } = props;
 
-  return <Card body>{value}</Card>;
+  return (
+    <Card
+      bg="light"
+      body
+    >
+      <h1>{value}</h1>
+    </Card>
+  );
 };
 
 StackBox.propTypes = {

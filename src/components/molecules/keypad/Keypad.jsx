@@ -15,6 +15,7 @@ class Keypad extends React.Component {
       <Button
         buttonName={num}
         onClick={onClick}
+        variant="info"
       />
     </Col>
   );
