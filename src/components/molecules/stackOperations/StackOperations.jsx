@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { ButtonGroup, OverlayTrigger, Popover } from 'react-bootstrap';
+import {
+  ButtonGroup, OverlayTrigger, Popover, Container, Row, Col,
+} from 'react-bootstrap';
+import styled from 'styled-components';
 import Button from '../../atoms/button/Button';
 
-const operands = [
+const stackOperands = [
   {
     name: 'push',
     tooltip: 'places an item on the top of the stack',
@@ -22,6 +25,9 @@ const operands = [
     name: 'isEmpty',
     tooltip: 'true when the stack is empty, otherwise false',
   },
+];
+
+const mathOperands = [
   {
     name: '+',
     tooltip: 'adds the first two items on the stack, and pushes the result back to the top',
@@ -54,20 +60,22 @@ const createButton = (operandInfo, clickHandler, props) => {
   );
 
   return (
-    <OverlayTrigger
-      key={operandInfo.name}
-      placement="bottom"
-      trigger="hover"
-      delay={{ show: 250, hide: 400 }}
-      overlay={tooltip}
-    >
-      <span>
-        <Button
-          buttonName={operandInfo.name}
-          onClick={clickHandler}
-        />
-      </span>
-    </OverlayTrigger>
+    <Col>
+      <OverlayTrigger
+        key={operandInfo.name}
+        placement="bottom"
+        trigger="hover"
+        delay={{ show: 250, hide: 400 }}
+        overlay={tooltip}
+      >
+        <span>
+          <Button
+            buttonName={operandInfo.name}
+            onClick={clickHandler}
+          />
+        </span>
+      </OverlayTrigger>
+    </Col>
   );
 };
 
@@ -75,9 +83,14 @@ const StackOperations = props => {
   const { clickHandler } = props;
 
   return (
-    <ButtonGroup>
-      {operands.map(operation => createButton(operation, clickHandler, props))}
-    </ButtonGroup>
+    <Container>
+      <Row>
+        {stackOperands.map(operation => createButton(operation, clickHandler, props))}
+      </Row>
+      <Row>
+        {mathOperands.map(operation => createButton(operation, clickHandler, props))}
+      </Row>
+    </Container>
   );
 };
 
