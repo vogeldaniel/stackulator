@@ -1,27 +1,15 @@
-// TODO: This God-Class is too big!
-
 import React from 'react';
 import KeyboardEventHandler from 'react-keyboard-event-handler';
 
-import styled from 'styled-components';
-import Keypad from '../../molecules/keypad/Keypad';
-import InputDisplay from '../../molecules/inputDisplay/InputDisplay';
 import StackDisplay from '../../molecules/stackDisplay/StackDisplay';
-import StackOperations from '../../molecules/stackOperations/StackOperations';
+
+import InputArea from '../../organisms/inputArea/InputArea';
 
 import Stack from '../../../utils/Stack/Stack';
 
-/*
-These functions are declared here so they can be passed down to the stackulator
- which operates with higher-order functions
- */
-const addition = (item1, item2) => item1 + item2;
-
-const subtraction = (item1, item2) => item1 - item2;
-
-const multiplication = (item1, item2) => item1 * item2;
-
-const division = (item1, item2) => item1 / item2;
+import {
+  addition, subtraction, multiplication, division,
+} from '../../../utils/arithmetic';
 
 class Controller extends React.Component {
   static STACK_OPERATIONS = ['push', 'pop', 'peek', 'isEmpty'];
@@ -134,28 +122,19 @@ class Controller extends React.Component {
     return (
       <div>
         <StackDisplay memory={stack.memory} />
+        <KeyboardEventHandler
+          handleKeys={['numeric']}
+          onKeyEvent={key => this.input(key)}
+        />
         <div>
-          <InputArea>
-            <InputDisplay num={inputNum} />
-            <Keypad clickHandler={this.input} />
-            <KeyboardEventHandler
-              handleKeys={['numeric']}
-              onKeyEvent={key => this.input(key)}
-            />
-            <StackOperations clickHandler={this.input} />
-          </InputArea>
+          <InputArea
+            inputDisplay={inputNum}
+            clickHandler={this.input}
+          />
         </div>
       </div>
     );
   };
 }
-
-const InputArea = styled.div`
-  background-color: #f8f9fa;
-  position: fixed;
-  bottom: 0;
-  align-items: center;
-  width: 100vw;
-`;
 
 export default Controller;

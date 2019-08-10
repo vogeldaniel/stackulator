@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import Controller from './components/organisms/controller/Controller';
+import Controller from './components/templates/controller/Controller';
 
 function App() {
   return (
