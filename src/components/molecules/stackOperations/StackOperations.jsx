@@ -59,9 +59,8 @@ const createButton = (operandInfo, clickHandler, props) => {
   );
 
   return (
-    <Col>
+    <Col key={operandInfo.name}>
       <OverlayTrigger
-        key={operandInfo.name}
         trigger={['hover', 'active']}
         delay={{ show: 600, hide: 400 }}
         overlay={tooltip}

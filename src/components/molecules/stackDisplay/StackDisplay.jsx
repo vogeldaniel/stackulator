@@ -9,8 +9,8 @@ const StackDisplay = props => {
 
   return (
     <>
-      {memory.map(item => (
-        <StackBox value={item} />
+      {memory.map((item, index) => (
+        <StackBox value={item} key={`${item}-${index}`} />
       ))}
       <BlankSpace />
     </>
