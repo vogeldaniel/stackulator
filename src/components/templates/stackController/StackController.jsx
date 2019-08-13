@@ -20,11 +20,11 @@ class StackController extends React.Component {
 
   static couldNotBeANumber = input => isNaN(parseInt(input));
 
-  static isStackOperator = input => Controller.STACK_OPERATIONS.includes(input);
+  static isStackOperator = input => StackController.STACK_OPERATIONS.includes(input);
 
-  static isMathOperator = input => Controller.MATH_OPERATIONS.includes(input);
+  static isMathOperator = input => StackController.MATH_OPERATIONS.includes(input);
 
-  static isCalcOperator = input => Controller.CALC_OPERATIONS.includes(input);
+  static isCalcOperator = input => StackController.CALC_OPERATIONS.includes(input);
 
   constructor(props) {
     super(props);
@@ -35,12 +35,12 @@ class StackController extends React.Component {
   }
 
   input = input => {
-    if (Controller.couldNotBeANumber(input)) {
-      if (Controller.isStackOperator(input)) {
+    if (StackController.couldNotBeANumber(input)) {
+      if (StackController.isStackOperator(input)) {
         this.handleStackInput(input);
-      } else if (Controller.isMathOperator(input)) {
+      } else if (StackController.isMathOperator(input)) {
         this.handleMathInput(input);
-      } else if (Controller.isCalcOperator(input)) {
+      } else if (StackController.isCalcOperator(input)) {
         this.handleCalcInput(input);
       }
     } else {
