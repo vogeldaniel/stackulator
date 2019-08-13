@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.089a0695.chunk.css",
-    "main.js": "/react-gh-pages/static/js/main.ebd84fc6.chunk.js",
-    "main.js.map": "/react-gh-pages/static/js/main.ebd84fc6.chunk.js.map",
-    "runtime~main.js": "/react-gh-pages/static/js/runtime~main.ac2d5040.js",
-    "runtime~main.js.map": "/react-gh-pages/static/js/runtime~main.ac2d5040.js.map",
-    "static/js/2.154e43df.chunk.js": "/react-gh-pages/static/js/2.154e43df.chunk.js",
-    "static/js/2.154e43df.chunk.js.map": "/react-gh-pages/static/js/2.154e43df.chunk.js.map",
-    "index.html": "/react-gh-pages/index.html",
-    "precache-manifest.37972e310bc6f08bc55a44c42fb9c484.js": "/react-gh-pages/precache-manifest.37972e310bc6f08bc55a44c42fb9c484.js",
-    "service-worker.js": "/react-gh-pages/service-worker.js",
-    "static/css/main.089a0695.chunk.css.map": "/react-gh-pages/static/css/main.089a0695.chunk.css.map"
+    "main.css": "/stackulator/static/css/main.089a0695.chunk.css",
+    "main.js": "/stackulator/static/js/main.5524d360.chunk.js",
+    "main.js.map": "/stackulator/static/js/main.5524d360.chunk.js.map",
+    "runtime~main.js": "/stackulator/static/js/runtime~main.db72c1ba.js",
+    "runtime~main.js.map": "/stackulator/static/js/runtime~main.db72c1ba.js.map",
+    "static/js/2.302864a0.chunk.js": "/stackulator/static/js/2.302864a0.chunk.js",
+    "static/js/2.302864a0.chunk.js.map": "/stackulator/static/js/2.302864a0.chunk.js.map",
+    "index.html": "/stackulator/index.html",
+    "precache-manifest.406176d6890876b644459474b07624c1.js": "/stackulator/precache-manifest.406176d6890876b644459474b07624c1.js",
+    "service-worker.js": "/stackulator/service-worker.js",
+    "static/css/main.089a0695.chunk.css.map": "/stackulator/static/css/main.089a0695.chunk.css.map"
   }
 }
