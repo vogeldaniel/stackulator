@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import StackController from './components/templates/stackController/StackController';
+import Routing from "./pages/Routing";
 
 function App() {
   return (
     <div className="App">
-      <StackController />
+      <Routing />
     </div>
   );
 }
