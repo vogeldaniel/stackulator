@@ -11,7 +11,7 @@ import {
   addition, subtraction, multiplication, division,
 } from '../../../utils/arithmetic';
 
-class Controller extends React.Component {
+class StackController extends React.Component {
   static STACK_OPERATIONS = ['push', 'pop', 'peek', 'isEmpty'];
 
   static MATH_OPERATIONS = ['+', '-', '*', '/'];
@@ -137,4 +137,4 @@ class Controller extends React.Component {
   };
 }
 
-export default Controller;
+export default StackController;
