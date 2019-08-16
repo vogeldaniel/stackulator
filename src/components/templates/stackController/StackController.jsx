@@ -35,16 +35,20 @@ class StackController extends React.Component {
   }
 
   input = input => {
-    if (StackController.couldNotBeANumber(input)) {
-      if (StackController.isStackOperator(input)) {
-        this.handleStackInput(input);
-      } else if (StackController.isMathOperator(input)) {
-        this.handleMathInput(input);
-      } else if (StackController.isCalcOperator(input)) {
-        this.handleCalcInput(input);
+    try {
+      if (StackController.couldNotBeANumber(input)) {
+        if (StackController.isStackOperator(input)) {
+          this.handleStackInput(input);
+        } else if (StackController.isMathOperator(input)) {
+          this.handleMathInput(input);
+        } else if (StackController.isCalcOperator(input)) {
+          this.handleCalcInput(input);
+        }
+      } else {
+        this.handleNumInput(input);
       }
-    } else {
-      this.handleNumInput(input);
+    } catch (e) {
+      window.alert(e);
     }
   };
 
@@ -65,11 +69,10 @@ class StackController extends React.Component {
         this.setState({ inputNum: 0 });
         break;
       case 'pop':
-        try {
-          this.setState({ inputNum: stack.pop() });
-        } catch (e) {
-          window.alert(e);
-        }
+        this.setState({ inputNum: stack.pop() });
+        break;
+      case 'peek':
+        this.setState({ inputNum: stack.peek() });
         break;
       case 'isEmpty':
         window.alert(stack.isEmpty());

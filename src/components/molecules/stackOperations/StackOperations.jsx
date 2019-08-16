@@ -9,41 +9,41 @@ import Button from '../../atoms/button/Button';
 const stackOperands = [
   {
     name: 'push',
-    tooltip: 'places an item on the top of the stack',
+    tooltip: 'Places an item on the top of the stack.',
   },
   {
     name: 'pop',
     tooltip:
-      'removes the top item and returns it -- here, the return is placed in the keyboard input',
+      'Removes the top item and returns it. In Stackulator, the return is placed in the keyboard input.',
   },
   {
     name: 'peek',
-    tooltip: 'shows the item on the top of the stack',
+    tooltip: 'Returns the item at the top of the stack. In Stackulator, the return is placed in the keyboard input.',
   },
   {
     name: 'isEmpty',
-    tooltip: 'true when the stack is empty, otherwise false',
+    tooltip: 'True when the stack is empty, otherwise false.',
   },
 ];
 
 const mathOperands = [
   {
     name: '+',
-    tooltip: 'adds the first two items on the stack, and pushes the result back to the top',
+    tooltip: 'Adds the first two items on the stack, and pushes the result back to the top.',
   },
   {
     name: '-',
     tooltip:
-      'subtracts the second item on the stack from the first, and pushes the result back to the top',
+      'Subtracts the second item on the stack from the first, and pushes the result back to the top.',
   },
   {
     name: '*',
-    tooltip: 'multiplies the first two items on the stack, and pushes the result back to the top',
+    tooltip: 'Multiplies the first two items on the stack, and pushes the result back to the top.',
   },
   {
     name: '/',
     tooltip:
-      'divides the first item on the stack by the second, and pushes the result back to the top',
+      'Divides the first item on the stack by the second, and pushes the result back to the top.',
   },
 ];
 

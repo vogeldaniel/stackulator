@@ -11,14 +11,14 @@ class Stack {
 
   peek = () => {
     if (this.memory.length === 0) {
-      throw new Error('Empty stack');
+      throw new Error('Not enough items.');
     }
     return this.memory[0];
   };
 
   pop = () => {
     if (this.memory.length === 0) {
-      throw new Error('Empty stack');
+      throw new Error('Not enough items.');
     }
     const poppedItem = this.memory[0];
     this.memory = this.memory.slice(1);
