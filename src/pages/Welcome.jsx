@@ -12,10 +12,11 @@ const WelcomeBox = styled.div`
 
 const Welcome = () => (
   <WelcomeBox>
-    <h1> Welcome to Stackulator. </h1>
-    <h2> A tool for learning the stack. </h2>
+    <h1> Stackulator. </h1>
+    <h2> Learn the stack. </h2>
     <h6> By Daniel Vogel. </h6>
     <Link to="/app"> Try it now. </Link>
+    <a href="https://github.com/vogeldaniel/stackulator"> View the source. </a>
   </WelcomeBox>
 );
 
