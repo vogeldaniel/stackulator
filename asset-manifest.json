@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/stackulator/static/css/main.089a0695.chunk.css",
-    "main.js": "/stackulator/static/js/main.a3ec021b.chunk.js",
-    "main.js.map": "/stackulator/static/js/main.a3ec021b.chunk.js.map",
+    "main.js": "/stackulator/static/js/main.23c06824.chunk.js",
+    "main.js.map": "/stackulator/static/js/main.23c06824.chunk.js.map",
     "runtime~main.js": "/stackulator/static/js/runtime~main.db72c1ba.js",
     "runtime~main.js.map": "/stackulator/static/js/runtime~main.db72c1ba.js.map",
     "static/js/2.2d5ad00c.chunk.js": "/stackulator/static/js/2.2d5ad00c.chunk.js",
     "static/js/2.2d5ad00c.chunk.js.map": "/stackulator/static/js/2.2d5ad00c.chunk.js.map",
     "index.html": "/stackulator/index.html",
-    "precache-manifest.c335adcf7c18a96b1e6438e8907a91ac.js": "/stackulator/precache-manifest.c335adcf7c18a96b1e6438e8907a91ac.js",
+    "precache-manifest.22e38da67fd84f1e0f2b586b591dc19c.js": "/stackulator/precache-manifest.22e38da67fd84f1e0f2b586b591dc19c.js",
     "service-worker.js": "/stackulator/service-worker.js",
     "static/css/main.089a0695.chunk.css.map": "/stackulator/static/css/main.089a0695.chunk.css.map"
   }
